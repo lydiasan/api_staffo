@@ -14,7 +14,6 @@ def getvalue():
     subdomain = request.form['subdomain']
     email = request.form['email']
     password = request.form['password']
-    print(subdomain)
     return render_template('request.py', subdomain=subdomain, email=email, password=password)
 
 @app.route('/db')
