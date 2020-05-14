@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-import pystaffo
+from pystaffo import StaffoAccount
 import requests
 import json
-import main
+import app
 from flask import Flask
 
 
@@ -15,7 +15,7 @@ account.get_location('Paris')
 
 # will return all shifts for specified location
 r = requests.get('https://api.github.com/user/locations/64/shifts.json', auth=('subdomain', 'email', 'password'))
-return r
+data = json.dumps(r.json) # récupère les datas issues de la requête et en fait un tableau
 
 if __name__ == "__main__":
-app.run()
+    app.run()
